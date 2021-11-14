@@ -1,14 +1,45 @@
-<h1>
-  Hello
-</h1>
-<form [formGroup] = "formdata" (ngSubmit) = "onClickSubmit(formdata.value)">
-  <label for="longUrl">URL You Want to Short</label>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">ShortLink</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+<div class="container">
+
+  <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
+    <div class="form-group">
+      <label for="longUrl">URL You Want to Short (enter it in form: http://shortlink.com)</label>
+      <input class="form-control" type="text" id="longUrl" name="longUrl" placeholder="Long URL" formControlName="longUrl" required />
+    </div>
+    <!-- <input type="submit" class = "forsubmit" value="Submit"> -->
+    <button type="submit" class="btn btn-primary" value="Submit">Submit</button>
+  </form>
   <br>
-  <input type="text" id="longUrl" name="longUrl" placeholder="Long URL" formControlName="longUrl">
-  <input type="submit" class = "forsubmit" value="Submit">
-</form>
+  <div class="alert alert-info">
+    URL entered is :
+    <a href="{{ longUrl }}" target="_blank">
+     {{ longUrl }}
+    </a>
+  </div>
+  <div class="alert alert-success">
+    And it's ShortURL is :
+    <a href="{{ shortUrl }}" target="_blank">
+      {{ shortUrl }}
+    </a>
+  </div>
+</div>
 
-<p>
-  URL entered is : {{longUrl}}
-</p>
+<footer class="page-footer font-small blue">
 
+  <div class="footer-copyright text-center py-3">© 2021 Copyright:
+    <a target="_blank" href="https://linkedin.com/in/adityasonani/"> Aditya Sonani</a>
+  </div>
+  
+
+</footer>
