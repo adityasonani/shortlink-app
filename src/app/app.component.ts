@@ -36,6 +36,8 @@ export class AppComponent {
         if (this.longUrl.indexOf('http://')!=0 && this.longUrl.indexOf('https://')!=0) {
           this.longUrl='https://'+this.longUrl;
         }
+        // console.log(this.longUrl);
+        data.longUrl = this.longUrl;
         this.postURI = environment.APIURL+'/generate'
         // this.postedData = this.http.post<any>(this.postURI, data);
         this.http.post<any>(this.postURI, data).subscribe(
