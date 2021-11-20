@@ -14,7 +14,7 @@
 
   <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)">
     <div class="form-group">
-      <label for="longUrl">URL You Want to Short (enter it in form: http://shortlink.com)</label>
+      <label for="longUrl">URL You Want to Short: </label>
       <input class="form-control" type="text" id="longUrl" name="longUrl" placeholder="Long URL" formControlName="longUrl" required />
     </div>
     <!-- <input type="submit" class = "forsubmit" value="Submit"> -->
@@ -28,7 +28,7 @@
     </a>
   </div>
   <div class="alert alert-success">
-    And it's ShortURL is :
+    It's ShortLink is :
     <a href="{{ shortUrl }}" target="_blank">
       {{ shortUrl }}
     </a>
@@ -37,8 +37,8 @@
 
 <footer class="page-footer font-small blue">
 
-  <div class="footer-copyright text-center py-3">© 2021 Copyright:
-    <a target="_blank" href="https://linkedin.com/in/adityasonani/"> Aditya Sonani</a>
+  <div class="footer-copyright text-center py-3">© 2021- Copyright:
+    <a target="_blank" href="https://shortlink-url.herokuapp.com/MEXq"> Aditya Sonani </a>
   </div>
   
 

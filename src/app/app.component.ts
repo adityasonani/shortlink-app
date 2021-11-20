@@ -14,8 +14,11 @@ export class AppComponent {
   longUrl:any;
   postURI:any;
   shortUrl:any;
+  windowURL: any;
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    this.windowURL=window.location.href;
+  }
 
   ngOnInit() {
     this.formdata = new FormGroup({
@@ -30,6 +33,9 @@ export class AppComponent {
     else {
       this.longUrl=data.longUrl; 
       if (this.longUrl.length>0) {
+        if (this.longUrl.indexOf('http://')!=0 && this.longUrl.indexOf('https://')!=0) {
+          this.longUrl='https://'+this.longUrl;
+        }
         this.postURI = environment.APIURL+'/generate'
         // this.postedData = this.http.post<any>(this.postURI, data);
         this.http.post<any>(this.postURI, data).subscribe(
