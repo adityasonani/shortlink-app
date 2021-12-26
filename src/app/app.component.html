@@ -60,10 +60,10 @@
     <button mat-raised-button color="primary" type="submit" value="Submit">ShortLink</button>
   </form>
   <br>
-  <div class="alert alert-info">
+  <div class="alert alert-info" style="overflow-wrap:break-word;">
     URL entered is :
     <a href="{{ longUrl }}" target="_blank">
-     {{ longUrl }}
+      {{ longUrl }}
     </a>
   </div>
   <mat-progress-bar *ngIf="isVisible" mode="indeterminate"></mat-progress-bar>
